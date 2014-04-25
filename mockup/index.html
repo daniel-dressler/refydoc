@@ -1,0 +1,86 @@
+<html>
+<head>
+<link href="bootstrap.css" rel="stylesheet">
+<link href="bootstrap-theme.css" rel="stylesheet">
+<link href="custom.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+
+	<div class="container">
+		<div class="header">
+			<ul class="nav nav-pills pull-right">
+				<li class="active"><a href="#">Documentation</a></li>
+				<li><a href="github.com">Source</a></li>
+				<li><a href="github.com/downloadzip">Download</a></li>
+			</ul>
+			<h3 class="text-muted"><img src="elib_greylabel.png" style="max-height:50px"></h3>
+		</div>
+
+		<ol class="breadcrumb">
+			<li><a href="#">C</a></li>
+			<li><a href="#">Thread support library</a></li>
+			<li><a href="#">Threads</a></li>
+			<li class="active">thread_create</li>
+		</ol>
+		<div class="row">
+			<div class="col-lg-12">
+				<h1>thread_create</h1>
+				<code>int thrd_create( thrd_t *thr, thrd_start_t func, void *arg );
+					(since C11)</code>
+				<p>Creates a new thread executing the function func. The function is
+				invoked as func(arg).</p>
+
+				<p>If successful, the object pointed to by thr is set to the identifier of the new thread. </p>
+				<p>The completion of this function synchronizes with the beginning of the thread. </p>
+
+				<h2>Parameters</h2>
+				<p><b>thr</b> - pointer to memory location to put the id of the new
+				thread</p>
+				<p><b>thr</b> - pointer to memory location to put the id of the new
+				thread</p>
+				<p><b>thr</b> - pointer to memory location to put the id of the new
+				thread</p>
+
+				<h2>Return Value</h2>
+				<p><a href="">thrd_sucess</a> if the creation of the new thread was
+				successful. Otherwise returns third-nomem if there was insufficient
+				ammount of memoru or third_error if another error occured.</p>
+
+				<h2>Notes</h2>
+				<p>The htrad id may be reused for new threads once the hread has
+				finished and joined or detached.</p>
+
+				<h2>Related</h2>
+				<p><a href="">third_detach</a> - a type iding a thead</p>
+				<p><a href="">third_join</a></p>
+			</div>
+		</div>
+
+		<hr>
+		<div class="row">
+			<div class="col-sm-6" style="opacity: 0.8;">
+				<h4>Also see in Threads</h4>
+				<p><a href="">third_detach</a> - a type iding a thead</p>
+				<p><a href="">third_ch</a> - a typeiding a thead</p>
+				<p><a href="">third_tach</a> - a tye iding a thead</p>
+				<p><a href="">third_dech</a> - a tyiding a thead</p>
+			</div>
+
+			<div class="col-sm-6" style="opacity: 0.8;">
+				<h4>Related to Threads</h4>
+				<p><a href="">Mutual exclusion</a></p>
+				<p><a href="">Condition variables</a></p>
+				<p><a href="">Thread-local storage</a></p>
+			</div>
+		</div>
+
+		<hr>
+		<div class="col-sm-12">
+			<img src="elib_greylabel.png" style="max-width: 100%">
+			<hr>
+			<p style="opacity: 0.5">elib uses <a href="">Refydoc</a> to assist with documentation</p>
+		</div>
+	</div> <!-- /container -->
+	</body>
+	</html>
