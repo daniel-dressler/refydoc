@@ -27,15 +27,19 @@ Usage
 Refydoc requires either Clang or GCC 4.7+
 
 Compile:
-	git clone https://github.com/daniel-dressler/refydoc.git;
-	cd refydoc;
-	git submodule init && git submodule update;
-	make redep && make
+```
+git clone https://github.com/daniel-dressler/refydoc.git;
+cd refydoc;
+git submodule init && git submodule update;
+make redep && make
+```
 
 Use Refydoc to generate documentation:
-	mkdir -p doc_site;
-	cd doc_site;
-	../bin/refydoc ../doc/refydoc/refydoc.ini
+```
+mkdir -p doc_site;
+cd doc_site;
+../bin/refydoc ../doc/refydoc/refydoc.ini
+```
 
 The single argument to refydoc should a path to the settings for your
 documentation.
