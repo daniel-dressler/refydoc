@@ -165,9 +165,9 @@ macro(include_library_if Pred CFile)
     endif()
 endmacro(include_library_if)
 
-macro(include_build_dir BuildFile)
+macro(include_build_dir BuildDir)
     set_dot_dir()
-    include(${dotDir}/${BuildFile})
+    include(${dotDir}/${BuildDir}/build.cmake)
 endmacro(include_build_dir)
 
 macro(include_unit_tests)

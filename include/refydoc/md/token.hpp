@@ -3,15 +3,19 @@
 
 # include "refydoc/md/fwd.hpp"
 # include <elib/aux/move.hpp>
+# include <elib/enumeration.hpp>
+# include <map>
 # include <string>
 # include <cstddef>
 
 namespace refydoc { namespace md
 {
+    ////////////////////////////////////////////////////////////////////////////
     enum class token_id
     {
-        none,
-        /// 
+        invalid, 
+        
+        /// Whitespace
         whitespace, 
         newline,
         
@@ -28,20 +32,71 @@ namespace refydoc { namespace md
         hyphen, 
         equal, 
         exclam, 
-        amper, 
+        amper,
         
-        id, 
-        
-        invalid_char, 
+        identifier, 
+        escape 
     };
     
-    std::string to_string(token_id);
+    ////////////////////////////////////////////////////////////////////////////
+    constexpr bool is_invalid(token_id id) noexcept
+    {
+        return token_id::invalid == id;
+    }
     
+    ////////////////////////////////////////////////////////////////////////////
+    constexpr bool is_whitespace(token_id id) noexcept
+    {
+        return token_id::whitespace == id 
+            || token_id::newline == id; 
+    }
+    
+    ////////////////////////////////////////////////////////////////////////////
+    constexpr bool is_newline(token_id id) noexcept
+    {
+        return token_id::newline == id;
+    }
+    
+    ////////////////////////////////////////////////////////////////////////////
+    constexpr bool is_control(token_id id) noexcept
+    {
+        return token_id::lparen <= id && token_id::amper >= id;
+    }
+    
+    ////////////////////////////////////////////////////////////////////////////
+    constexpr bool is_identifier(token_id id) noexcept
+    {
+        return token_id::identifier == id;
+    }
+    
+    ////////////////////////////////////////////////////////////////////////////
+    constexpr bool is_escape(token_id id) noexcept
+    {
+        return token_id::escape == id;
+    }
+}}                                                          // namespace refydoc
+namespace elib { namespace enumeration
+{
+    template <>
+    struct basic_enum_traits< ::refydoc::md::token_id>
+    {
+        static const std::map< ::refydoc::md::token_id, std::string> name_map;
+    };
+}}                                                          // namespace elib
+namespace refydoc { namespace md
+{
+    ////////////////////////////////////////////////////////////////////////////
+    inline std::string to_string(token_id id)
+    {
+        return elib::enumeration::enum_cast<std::string>(id);
+    }
+    
+    ////////////////////////////////////////////////////////////////////////////
     class token
     {
     public:
         token()
-          : m_id(token_id::none), m_raw(), m_line(unsigned(-1))
+          : m_id(token_id::invalid), m_raw(), m_line(unsigned(-1))
         {}
         
         token(token_id xid, std::string xraw, unsigned xline = unsigned(-1))
@@ -52,6 +107,9 @@ namespace refydoc { namespace md
         token(token &&) = default;
         token & operator=(token const &) = default;
         token & operator=(token &&) = default;
+        
+        operator token_id() const noexcept
+        { return m_id; }
         
         token_id id() const noexcept
         { return m_id; }
@@ -80,6 +138,7 @@ namespace refydoc { namespace md
         unsigned m_line;
     };
     
-    std::string to_string(token);
+    ////////////////////////////////////////////////////////////////////////////
+    std::string to_string(token const &);
 }}                                                          // namespace refydoc
 #endif /* REFYDOC_MD_TOKEN_HPP */
