@@ -1,5 +1,6 @@
 #pragma once
 
+#include <stdio.h>
 #define file_handler stdout
 #define OUT(...) fprintf(file_handler, __VA_ARGS__)
 
