@@ -16,3 +16,24 @@ Element
   - Line Break
   - Escape 
 
+Token:
+   - TextHolder
+     - HTML Tag
+     - HTML Anchor Tag
+     - Inline HTML Contents
+     - Inline HTML Comments
+     - RawText
+     - CodeBlock
+     - CodeSpan
+     - Header
+     - BlankLine
+   - Escaped Char
+   - Container
+     - Inline HTML Block 
+     - ListItem
+     - UnOrderedList
+     - OrderedList
+     - BlockQuote
+     - Paragraph
+  - Bold Or Italic Marker
+  - Image
