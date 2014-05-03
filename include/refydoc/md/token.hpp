@@ -2,6 +2,7 @@
 #define REFYDOC_MD_TOKEN_HPP
 
 # include "refydoc/md/fwd.hpp"
+# include "refydoc/md/lexer_pos.hpp"
 # include <elib/aux/move.hpp>
 # include <elib/enumeration.hpp>
 # include <map>
@@ -96,11 +97,11 @@ namespace refydoc { namespace md
     {
     public:
         token()
-          : m_id(token_id::invalid), m_raw(), m_line(unsigned(-1))
+          : m_id(token_id::invalid), m_raw(), m_pos()
         {}
         
-        token(token_id xid, std::string xraw, unsigned xline = unsigned(-1))
-          : m_id(xid), m_raw(xraw), m_line(xline)
+        token(token_id xid, std::string xraw, lexer_pos xpos)
+          : m_id(xid), m_raw(xraw), m_pos(xpos)
         {}
         
         token(token const &) = default;
@@ -126,16 +127,25 @@ namespace refydoc { namespace md
         std::size_t size() const noexcept
         { return m_raw.size(); }
         
-        unsigned line() const noexcept
-        { return m_line; }
+        lexer_pos position() const noexcept
+        { return m_pos; }
         
-        void line(unsigned xline) noexcept
-        { m_line = xline; }
+        void position(lexer_pos xpos) noexcept
+        { m_pos = xpos; }
+        
+        unsigned index() const noexcept
+        { return m_pos.index; }
+        
+        unsigned line() const noexcept
+        { return m_pos.line; }
+        
+        unsigned col() const noexcept 
+        { return m_pos.col; }
         
     private:
         token_id m_id;
         std::string m_raw;
-        unsigned m_line;
+        lexer_pos m_pos;
     };
     
     ////////////////////////////////////////////////////////////////////////////

@@ -9,12 +9,23 @@ namespace refydoc { namespace md
     /// Store mappings from key -> URL for links
     class link_table;
     
-    /// output of parser
+    /// Stores positional information for a lexer
+    struct lexer_pos;
+    
+    /// The lexing class
+    class lexer;
+    
+    /// output of lexer
     enum class token_id;
     class token;
     
+    /// The parsing class
+    class parser;
+    
     namespace ast
     {
+        enum class node_id;
+        
         /// Base class
         class node;
         
