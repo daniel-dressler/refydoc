@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="300.90936"
+   height="81.28125"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="refydoc_logo.svg"
+   inkscape:export-filename="/home/danieru/refydoc/doc/refydoc/refydoc_logo.png"
+   inkscape:export-xdpi="100"
+   inkscape:export-ydpi="100">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="269.75036"
+     inkscape:cy="-371.06677"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="958"
+     inkscape:window-height="1060"
+     inkscape:window-x="1680"
+     inkscape:window-y="18"
+     inkscape:window-maximized="0"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="レイヤー 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-1.7574927,-0.88473129)">
+    <text
+       sodipodi:linespacing="125%"
+       id="text4614"
+       y="59.665981"
+       x="186.06093"
+       style="font-size:72px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#1a1a1a;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
+       xml:space="preserve"><tspan
+         dx="0 -4.7800002 -3.9799991 3.4599986 -7.1700029 -2.1099999 -0.13"
+         id="tspan4616"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#1a1a1a;font-family:Cardo;-inkscape-font-specification:Cardo"
+         y="59.665981"
+         x="186.06093"
+         sodipodi:role="line">Refydoc</tspan></text>
+    <path
+       sodipodi:type="star"
+       style="fill:none;stroke:#1a1a1a;stroke-width:26.19489288;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="path4636"
+       sodipodi:sides="7"
+       sodipodi:cx="184.85793"
+       sodipodi:cy="651.83667"
+       sodipodi:r1="77.912827"
+       sodipodi:r2="38.956413"
+       sodipodi:arg1="1.3352513"
+       sodipodi:arg2="1.7840503"
+       inkscape:flatsided="true"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="M 203.04068,727.59811 136.962,713.289 l -30.01206,-60.58397 28.65424,-61.23786 65.74331,-15.7784 53.32634,41.56252 0.75354,67.60602 z"
+       inkscape:transform-center-x="2.5979391"
+       inkscape:transform-center-y="4.2018979"
+       transform="matrix(0.32474739,0.0870158,-0.08517193,0.31786598,27.355428,-187.5507)" />
+    <path
+       transform="matrix(0.14735897,0.03948472,-0.03864804,0.14423644,29.540268,-65.687677)"
+       inkscape:transform-center-y="1.9066889"
+       inkscape:transform-center-x="1.1788419"
+       d="M 203.04068,727.59811 136.962,713.289 l -30.01206,-60.58397 28.65424,-61.23786 65.74331,-15.7784 53.32634,41.56252 0.75354,67.60602 z"
+       inkscape:randomized="0"
+       inkscape:rounded="0"
+       inkscape:flatsided="true"
+       sodipodi:arg2="1.7840503"
+       sodipodi:arg1="1.3352513"
+       sodipodi:r2="38.956413"
+       sodipodi:r1="77.912827"
+       sodipodi:cy="651.83667"
+       sodipodi:cx="184.85793"
+       sodipodi:sides="7"
+       id="path4638"
+       style="fill:#1a1a1a;fill-opacity:1;stroke:none"
+       sodipodi:type="star" />
+  </g>
+</svg>
