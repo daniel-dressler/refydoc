@@ -11,7 +11,7 @@ namespace refydoc { namespace md
     
     /// output of parser
     enum class token_id;
-    struct token;
+    class token;
     
     namespace ast
     {

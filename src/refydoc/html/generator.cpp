@@ -1,4 +1,6 @@
+#include "refydoc/html/generator.hpp"
 #include "refydoc/template_tools.h"
+
 #include <string>
 
 namespace refydoc {

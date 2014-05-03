@@ -1,2 +1,3 @@
-include_build_dir(html/build.cmake)
-include_build_dir(md/build.cmake)
+include_build_dir(html)
+include_build_dir(md)
+include_build_dir(header_tests)

@@ -1,11 +1,11 @@
 #pragma once
 
-#include <stdio.h>
+#include <cstdio>
 #define file_handler stdout
-#define OUT(...) fprintf(file_handler, __VA_ARGS__)
+#define OUT(...) std::fprintf(file_handler, __VA_ARGS__)
 
 #define A(title, link) \
-	OUT("<a href='%s'>%s</a>", link, title)
+	OUT("<a href='%s'>%s</a>", (const char*)link, (const char*)title)
 #define H1(title) \
 	OUT("<h1>%s</h1>\n", title)
 #define H2(title) \
