@@ -7,8 +7,6 @@ endif()
 ################################################################################
 #                            Toolchain config
 ################################################################################
-
-
 # Adds a ton of warnings to the build. 
 # NOTE: ALL CODE SHOULD COMPILE CLEANLY WITH THIS ON!
 option(CONFIG_ALL_WARNINGS "Add warnings for GCC/Clang" ON)

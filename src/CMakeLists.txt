@@ -64,6 +64,9 @@ set(LIBRARY_FLAGS "${LIBRARY_FLAGS} ${WARNING_FLAGS}")
 ################################################################################
 ##                               Objects
 ################################################################################
+
+include(md/build.cmake)
+
 # Compile source files into "Object Libraries"
 add_library(ObjLib OBJECT ${LIBRARY_SRC})
 set_target_properties(ObjLib PROPERTIES COMPILE_FLAGS "${LIBRARY_FLAGS}")
