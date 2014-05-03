@@ -16,6 +16,8 @@
 	OUT("<code>%s</code>\n", code)
 #define HR() \
 	OUT("<hr>\n");
+#define IMG(path, classes) \
+	OUT("<img src='%s' class='%s' />", path, classes)
 
 #define P() \
 	OUT("<p>\n");
