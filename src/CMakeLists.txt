@@ -65,8 +65,7 @@ set(LIBRARY_FLAGS "${LIBRARY_FLAGS} ${WARNING_FLAGS}")
 ##                               Objects
 ################################################################################
 
-include(md/build.cmake)
-include(html/build.cmake)
+include(refydoc/build.cmake)
 
 # Compile source files into "Object Libraries"
 add_library(ObjLib OBJECT ${LIBRARY_SRC})

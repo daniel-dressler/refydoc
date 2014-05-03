@@ -6,7 +6,7 @@ namespace refydoc { namespace md
     /// Top level class that stores the MD file
     class document;
     
-    /// Store mapings from key -> URL for links
+    /// Store mappings from key -> URL for links
     class link_table;
     
     /// output of parser

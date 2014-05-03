@@ -21,7 +21,7 @@ option(CONFIG_UNIT_TESTS "build unit tests" ON)
 # on the build but the build is MUCH faster.
 option(CONFIG_HEADER_TESTS
         " Build source files that simple include the matching header.
-          This is used in  header only librarys to check for errors" OFF)
+          This is used in  header only librarys to check for errors" ON)
 
 
 ################################################################################
@@ -165,6 +165,10 @@ macro(include_library_if Pred CFile)
     endif()
 endmacro(include_library_if)
 
+macro(include_build_dir BuildFile)
+    set_dot_dir()
+    include(${dotDir}/${BuildFile})
+endmacro(include_build_dir)
 
 macro(include_unit_tests)
     set_dot_dir()
