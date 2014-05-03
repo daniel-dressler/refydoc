@@ -78,3 +78,10 @@ body {
     border-bottom: 0;
   }
 }
+
+.refydoc_logo { max-height: 50px; }
+.refydoc_deemf { opacity: 0.8; }
+.refydoc_semihide { opacity: 0.5; }
+.refydoc_fullwidth { max-width: 100%; }
+
+
