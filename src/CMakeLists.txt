@@ -99,7 +99,7 @@ set(REFYDOC_TEST_LINK_FLAGS ${CMAKE_THREAD_LIBS_INIT} ${Boost_LIBRARIES} ${ELIB_
 
 add_library(TestObj OBJECT ${UNIT_TEST_SRC} unit_test_main.cpp)
 set_target_properties(TestObj PROPERTIES COMPILE_FLAGS "${UNIT_TEST_FLAGS}")
-add_executable(refydoc_test $<TARGET_OBJECTS:TestObj> )
+add_executable(refydoc_tests $<TARGET_OBJECTS:TestObj> )
 target_link_libraries(refydoc_tests ${REFYDOC_TEST_LINK_FLAGS})
          
 endif()
