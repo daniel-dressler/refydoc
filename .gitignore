@@ -1,0 +1,18 @@
+#start by ignoring all files in EricsLib
+
+#all kate & gedit temp files
+*.kate-swp
+*~
+
+# all pyc files
+*.pyc
+*.o
+*.out
+
+/build
+/bin
+/test_files
+/cov-int
+/tmp
+/local
+/test_coverage
