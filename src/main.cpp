@@ -1,5 +1,6 @@
 
 #include <elib/config.hpp>
+#include <template_tools.h>
 #include <iostream>
 
 // DUMMY

@@ -1,0 +1,18 @@
+Element
+  - Block Element
+    - Paragraphs
+    - Line Breaks
+    - Headers
+    - Block Quotes
+    - Lists
+    - Code Blocks
+    - Horizontals Rules
+  - Span Element
+    - Links
+    - Emphasis
+    - Code
+    - Images
+  - HTML
+  - Line Break
+  - Escape 
+

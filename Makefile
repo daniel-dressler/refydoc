@@ -47,27 +47,11 @@ check:
 	@ $(MAKE) --no-print-directory -C build
 	@ echo
 	@ echo === Running tests ===
-	@ ./bin/refydoc_test --log_level=message --report_level=short
-
-.PHONY: check_shared
-check_shared:
-	@ echo === Building tests ===
-	@ $(MAKE) --no-print-directory -C build
-	@ echo 
-	@ echo === Running shared tests ===
-	@ ./bin/elib_test_shared --log_level=message --report_level=short
-
-.PHONY: check_static
-check_static:
-	@ echo === Building tests ===
-	@ $(MAKE) --no-print-directory -C build
-	@ echo
-	@ echo === Running static tests ===
-	@ ./bin/elib_test_static --log_level=message --report_level=short
+	@ ./bin/refydoc_tests --log_level=message --report_level=short
 
 .PHONY: scan_build
 scan_build:
-	@ rm -rf build/ ; mkdir -p build ; cd build/ ; scan-build cmake .. ; scan-build make ; cd ..
+	@ rm -rf build/ ; mkdir -p build ; cd build/ ; scan-build cmake $(REFYDOC_CMAKE_OPTIONS) .. ; scan-build make ; cd ..
 
 .PHONY: valgrind_check
 valgrind_check:
@@ -75,7 +59,7 @@ valgrind_check:
 	@ $(MAKE) --no-print-directory -C build
 	@ echo 
 	@ echo === Running tests ===
-	@ valgrind -v --show-reachable=yes --leak-check=full ./bin/refydoc_test --log_level=message --report_level=short
+	@ valgrind -v --show-reachable=yes --leak-check=full ./bin/refydoc_tests --log_level=message --report_level=short
 
 .PHONY: config_silent
 config_silent:
@@ -85,14 +69,13 @@ config_silent:
 config_loud:
 	@ $(MAKE) -j2 --no-print-directory -C build all 
 
-
 .PHONY: config
 config:
 	@ $(MAKE) --no-print-directory distclean
 	@ rm -rf build/ ; mkdir -p build/ ; cd build/ ; cmake $(REFYDOC_CMAKE_OPTIONS) $(BUILD_TYPE) $(STD) -DCONFIG_HEADER_TESTS=ON .. ; cd ..
 	@ time $(MAKE) --no-print-directory config_silent
 	@ echo === Running tests ===
-	@ ./bin/refydoc --log_level=message --report_level=short
+	@ ./bin/refydoc_tests --log_level=message --report_level=short
 	@ echo
 
 .PHONY: san_config
@@ -101,6 +84,6 @@ san_config:
 	@ rm -rf build/ ; mkdir -p build/ ; cd build/ ; cmake $(REFYDOC_CMAKE_OPTIONS) $(CMAKE_CONFIG) $(BUILD_TYPE) $(STD) -DCONFIG_HEADER_TESTS=ON .. ; cd ..
 	@ time $(MAKE) --no-print-directory config_silent
 	@ echo === Running tests ===
-	@ ./bin/refydoc_test --log_level=message --report_level=short
+	@ ./bin/refydoc_tests --log_level=message --report_level=short
 	@ echo
 
