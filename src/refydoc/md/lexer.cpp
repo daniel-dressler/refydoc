@@ -1,5 +1,6 @@
 #include "refydoc/md/lexer.hpp"
 #include "refydoc/md/token.hpp"
+#include <elib/aux.hpp>
 
 namespace refydoc { namespace md
 {
@@ -11,16 +12,37 @@ namespace refydoc { namespace md
         { return token(); }
         
         iterator parse_whitespace(iterator first, iterator last)
-        { return first; }
+        { 
+            while (first != last && is_whitespace(*first) && not is_newline(*first))
+                ++first;
+            return first;
+        }
         
         iterator parse_identifier(iterator first, iterator last)
-        { return first; }
+        { 
+            ELIB_ASSERT(first != last && is_alpha_numeric(*first));
+            while (first != last && (is_alpha_numeric(*first) || *first == '_'))
+                ++first;
+            return first;
+        }
         
         iterator parse_escape(iterator first, iterator last)
-        { return first; }
+        { 
+            ELIB_ASSERT(first != last && *first == '\\');
+            auto next = first + 1;
+            if (next != last && is_escape(*next))
+                return ++next;
+            return first;
+        }
         
         iterator parse_control(iterator first, iterator last)
-        { return first; }
+        { 
+            ELIB_ASSERT(first != last && is_control(*first));
+            const char val = *first;
+            while (first != last && *first == val)
+                ++first;
+            return first;
+        }
     }                                                       // namespace 
     
     token lexer::peek() const
