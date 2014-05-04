@@ -3,10 +3,51 @@
 
 # include "refydoc/md/fwd.hpp"
 # include "refydoc/md/lexer_pos.hpp"
+# include <elib/ranges/algorithm.hpp>
+# include <array>
 # include <string>
+# include <utility>
 
 namespace refydoc { namespace md
 {
+    
+    constexpr std::array<char, 17> control_characters = 
+        {{ 
+            '(', ')', '{', '}', '[', ']', '<', '>'
+          , '`', '*', '_', '+', '-', '=', '!', '&',  '#'
+        }};
+        
+    constexpr std::array<char, 14> escape_characters = 
+        {{
+            '(', ')', '{', '}', '[', ']'
+          , '`', '*', '_', '+', '-', '#', '.', '!'
+        }};
+    
+    inline bool is_whitespace(char ch) noexcept
+    {
+        return std::isspace(ch);
+    }
+    
+    inline bool is_newline(char ch) noexcept
+    {
+        return '\n' == ch;
+    }
+    
+    inline bool is_alpha_numeric(char ch) noexcept
+    {
+        return std::isalnum(ch);
+    }
+    
+    inline bool is_control(char ch) noexcept
+    {
+        return elib::ranges::count(control_characters, ch);
+    }
+    
+    inline bool is_escape(char ch) noexcept
+    {
+        return elib::ranges::count(escape_characters, ch);
+    }
+    
     class lexer
     {
     public:
@@ -26,22 +67,56 @@ namespace refydoc { namespace md
         lexer & operator=(lexer &&) = default;
         
     public:
-        token peek();
+        token peek() const;
         token get();
-        token peek();
-        void unput(lexer_pos); 
         
-        bool good() const noexcept;
-        bool empty() const noexcept;
-        bool bad() const noexcept;
-        explicit operator bool() const noexcept;
+        void unput(lexer_pos p)
+        {
+            set_position(p);
+        }
         
-        const_iterator begin() const noexcept;
-        const_iterator end() const noexcept;
-        const_iterator at() const noexcept;
+        bool empty() const noexcept
+        {
+            return m_begin == m_end;
+        }
         
-        lexer_pos position() const noexcept;
-    
+        explicit operator bool() const noexcept
+        {
+            return !empty();
+        }
+        
+        const_iterator begin() const noexcept
+        {
+            return m_begin;
+        }
+        
+        const_iterator end() const noexcept
+        {
+            return m_end;
+        }
+        
+        const_iterator at() const noexcept
+        {
+            return m_at;
+        }
+        
+        lexer_pos position() const noexcept
+        {
+            return m_pos;
+        }
+        
+        void set_position(lexer_pos const & pos)
+        {
+            m_at = m_begin + pos.index;
+            m_pos = pos;
+        }
+        
+        void reset()
+        {
+            m_at = m_begin;
+            m_pos = lexer_pos();
+        }
+        
     private:
         iterator m_begin, m_end, m_at;
         lexer_pos m_pos;

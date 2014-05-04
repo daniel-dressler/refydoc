@@ -14,7 +14,7 @@ namespace refydoc { namespace md
     ////////////////////////////////////////////////////////////////////////////
     enum class token_id
     {
-        invalid, 
+        none, 
         
         /// Whitespace
         whitespace, 
@@ -30,14 +30,26 @@ namespace refydoc { namespace md
         langle, 
         rangle, 
         tick, 
-        hyphen, 
+        plus, 
+        minus, 
         equal, 
         exclam, 
         amper,
+        underscore,
+        asterisk,
+        pound, 
         
         identifier, 
-        escape 
+        escape, 
+        
+        invalid
     };
+    
+    ////////////////////////////////////////////////////////////////////////////
+    constexpr bool is_none(token_id id) noexcept
+    {
+        return token_id::none == id;
+    }
     
     ////////////////////////////////////////////////////////////////////////////
     constexpr bool is_invalid(token_id id) noexcept
@@ -97,7 +109,7 @@ namespace refydoc { namespace md
     {
     public:
         token()
-          : m_id(token_id::invalid), m_raw(), m_pos()
+          : m_id(token_id::none), m_raw(), m_pos()
         {}
         
         token(token_id xid, std::string xraw, lexer_pos xpos)

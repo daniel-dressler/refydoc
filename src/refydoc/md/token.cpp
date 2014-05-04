@@ -13,7 +13,7 @@ namespace elib { namespace enumeration
     const std::map< ::refydoc::md::token_id, std::string>
     basic_enum_traits< ::refydoc::md::token_id>::name_map =
         {
-            _(invalid)
+            _(none)
           , _(whitespace)
           , _(newline)
           , _(lparen)
@@ -25,12 +25,16 @@ namespace elib { namespace enumeration
           , _(langle)
           , _(rangle)
           , _(tick)
-          , _(hyphen)
+          , _(plus)
+          , _(minus)
           , _(equal)
           , _(exclam)
           , _(amper)
+          , _(underscore)
+          , _(asterisk)
           , _(identifier)
           , _(escape)
+          , _(invalid)
         };
 #undef _
 
