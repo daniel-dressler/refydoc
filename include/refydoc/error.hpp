@@ -1,7 +1,7 @@
 #ifndef REFYDOC_ERROR_HPP
 #define REFYDOC_ERROR_HPP
 
-# include <elib/except.hpp>
+# include <elib/exception.hpp>
 # include <elib/aux/default_class.hpp>
 
 namespace refydoc 
